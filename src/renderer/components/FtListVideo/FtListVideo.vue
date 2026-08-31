@@ -163,7 +163,7 @@
           class="viewCount"
         >
           <template v-if="channelId !== null || channelName !== null"> • </template>
-          {{ t('Global.Counts.View Count', { count: parsedViewCount }, viewCount) }}
+          {{ t('Global.Counts.View Count', { count: viewCount % 1000 === 0 ? formatNumber(viewCount, { notation: 'compact' }) : parsedViewCount }, viewCount) }}
         </span>
         <span
           v-if="uploadedTime !== '' && !isLive"
